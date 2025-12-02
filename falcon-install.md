@@ -14,27 +14,24 @@ export KAC_TOKEN=""
 export KAC_REPO=""  
 export KAC_TAG=""  
 
-export KAC_TAG=""
-
-
-## Ensure the following is available on workstation/cloudshell
+# Ensure the following is available on workstation/cloudshell
 
 curl
 helm
 kubectl
 
-### Download the sensor download script and make it executable
+# Download the sensor download script and make it executable
 
 curl https://raw.githubusercontent.com/CrowdStrike/falcon-scripts/refs/heads/main/bash/containers/falcon-container-sensor-pull/falcon-container-sensor-pull.sh -o falcon-container-sensor-pull.sh
 
 chmod 777 falcon-container-sensor-pull.sh
 
-### Get CID Value from Sensor Download Page 
+# Get CID Value from Sensor Download Page 
 
 1. Log into Falcon and copy CID value from Sensor Download page. (Host Management and Setup -> Sensor Download)
 2. Paste CID Value into variable CID.
 
-### Generate API Client for Sensor Install 
+# Generate API Client for Sensor Install 
 
 1. CrowdStrike API Client is needed with the following scopes:
 
@@ -46,7 +43,7 @@ Falcon Container Image (read/write)
 2. Paste the Client ID into the variable FALCON_CLIENT_ID 
 3. Paste the Secret into the variable FALCON_CLIENT_SECRET
 
-### Setup Node Affinity Falcon Sensor to specific Nodes (Optional)
+# Setup Node Affinity Falcon Sensor to specific Nodes (Optional)
 
 1. Label specific nodes, replace node1 node2 node3 values with node name values
 
@@ -65,7 +62,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
             - enabled
 
 
-### Fetch Pull Token for Sensor 
+# Fetch Pull Token for Sensor 
 
 1. Use the pull script to get the pull token for the Falcon sensor
 
@@ -77,7 +74,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 
 2. Paste the output into the variable SENSOR_TOKEN
 
-### Pull Image Path for Sensor
+# Pull Image Path for Sensor
 
 1. Use the pull script to get the image path for the Falcon sensor
 
@@ -90,7 +87,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 2. Paste the image path into the variable SENSOR_REPO (This is everything before the ":")
 3. Paste the image tag into the variable SENSOR_TAG (This is everything after the ":")
 
-### Fetch Pull Token for IAR 
+# Fetch Pull Token for IAR 
 
 1. Use the pull script to get the pull token for the IAR
 
@@ -102,7 +99,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 
 2. Paste the output into the variable IAR_TOKEN
 
-### Pull Image Path for IAR
+# Pull Image Path for IAR
 
 1. Use the pull script to get the image path for the IAR
 
@@ -115,7 +112,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 2. Paste the image path into the variable IAR_REPO (This is everything before the ":")
 3. Paste the image tag into the variable IAR_TAG (This is everything after the ":")
 
-### Fetch Pull Token for KAC 
+# Fetch Pull Token for KAC 
 
 1. Use the pull script to get the pull token for the KAC
 
@@ -127,7 +124,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 
 2. Paste the output into the variable KAC_TOKEN
 
-### Pull Image Path for KAC
+# Pull Image Path for KAC
 
 1. Use the pull script to get the image path for the KAC
 
@@ -140,7 +137,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 2. Paste the image path into the variable KAC_REPO (This is everything before the ":")
 3. Paste the image tag into the variable KAC_TAG (This is everything after the ":")
 
-### Helm Install for Sensor (Deployed to ALL Nodes)
+# Helm Install for Sensor (Deployed to ALL Nodes)
 
 helm repo add crowdstrike https://crowdstrike.github.io/falcon-helm --force-update
 helm upgrade --install falcon-sensor crowdstrike/falcon-sensor -n falcon-system --create-namespace \
@@ -149,7 +146,7 @@ helm upgrade --install falcon-sensor crowdstrike/falcon-sensor -n falcon-system 
 --set node.image.tag="$SENSOR_TAG" \
 --set node.image.registryConfigJSON="$SENSOR_TOKEN"
 
-### Helm Install for Sensor (Deployed to labeled Nodes- OPTIONAL)
+# Helm Install for Sensor (Deployed to labeled Nodes- OPTIONAL)
 
 helm repo add crowdstrike https://crowdstrike.github.io/falcon-helm --force-update
 helm upgrade --install falcon-sensor crowdstrike/falcon-sensor -n falcon-system --create-namespace \
@@ -159,7 +156,7 @@ helm upgrade --install falcon-sensor crowdstrike/falcon-sensor -n falcon-system 
 --set node.image.tag="$SENSOR_TAG" \
 --set node.image.registryConfigJSON="$SENSOR_TOKEN"
 
-### Helm Install for IAR ###
+# Helm Install for IAR ###
 
 helm upgrade --install iar crowdstrike/falcon-image-analyzer \
   -n falcon-image-analyzer --create-namespace \
@@ -172,7 +169,7 @@ helm upgrade --install iar crowdstrike/falcon-image-analyzer \
   --set crowdstrikeConfig.clusterName="$CLUSTER_NAME" \
   --set image.registryConfigJSON="$IAR_TOKEN"
 
-### Helm Install for KAC ###
+# Helm Install for KAC ###
 
 helm repo add crowdstrike https://crowdstrike.github.io/falcon-helm --force-update
 helm upgrade --install falcon-kac crowdstrike/falcon-kac -n falcon-kac --create-namespace \
