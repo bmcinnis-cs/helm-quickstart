@@ -55,7 +55,7 @@ Falcon Container Image (read/write)
 
 ## Setup Node Affinity Falcon Sensor to specific Nodes (Optional)
 
-1. Label specific nodes, replace node1 node2 node3 values with node name values
+1. Label specific nodes, replace node1 node2 node3 values with node name values. These would be the nodes you want the sensor deployed to.
 
 ```bash
 kubectl label nodes node1 node2 node3 falcon-sensor=enabled
