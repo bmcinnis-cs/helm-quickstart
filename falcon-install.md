@@ -16,7 +16,7 @@ export KAC_REPO=""
 export KAC_TAG=""
 ```
 
-# Prerequisites 
+# Step 1 - Complete Prerequisites 
 
 ## Ensure workstation / cloudshell has the following installed
 
@@ -70,7 +70,10 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
             - enabled
 ```
 
-# Fetch Pull Token for Sensor 
+
+# Step 2 - Use Pull Script to Gather Image Paths and Pull Tokens for Sensor, IAR, KAC.
+
+## Fetch Pull Token for Sensor 
 
 1. Use the pull script to get the pull token for the Falcon sensor
 
@@ -83,7 +86,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 ```
 2. Paste the output into the variable SENSOR_TOKEN
 
-# Pull Image Path for Sensor
+## Pull Image Path for Sensor
 
 1. Use the pull script to get the image path for the Falcon sensor
 
@@ -97,7 +100,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 2. Paste the image path into the variable SENSOR_REPO (This is everything before the ":")
 3. Paste the image tag into the variable SENSOR_TAG (This is everything after the ":")
 
-# Fetch Pull Token for IAR 
+## Fetch Pull Token for IAR 
 
 1. Use the pull script to get the pull token for the IAR
 
@@ -111,7 +114,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 
 2. Paste the output into the variable IAR_TOKEN
 
-# Pull Image Path for IAR
+## Pull Image Path for IAR
 
 1. Use the pull script to get the image path for the IAR
 
@@ -126,7 +129,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 2. Paste the image path into the variable IAR_REPO (This is everything before the ":")
 3. Paste the image tag into the variable IAR_TAG (This is everything after the ":")
 
-# Fetch Pull Token for KAC 
+## Fetch Pull Token for KAC 
 
 1. Use the pull script to get the pull token for the KAC
 
@@ -140,7 +143,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 
 2. Paste the output into the variable KAC_TOKEN
 
-# Pull Image Path for KAC
+## Pull Image Path for KAC
 
 1. Use the pull script to get the image path for the KAC
 
@@ -155,7 +158,9 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 2. Paste the image path into the variable KAC_REPO (This is everything before the ":")
 3. Paste the image tag into the variable KAC_TAG (This is everything after the ":")
 
-# Helm Install for Sensor (Deployed to ALL Nodes)
+# Step 3 - Use Helm to install Sensor, IAR, KAC
+
+## Helm Install for Sensor (Deployed to ALL Nodes)
 
 ```bash
 helm repo add crowdstrike https://crowdstrike.github.io/falcon-helm --force-update
@@ -166,7 +171,7 @@ helm upgrade --install falcon-sensor crowdstrike/falcon-sensor -n falcon-system 
 --set node.image.registryConfigJSON="$SENSOR_TOKEN"
 ```
 
-# Helm Install for Sensor (Deployed to labeled Nodes- OPTIONAL)
+## Helm Install for Sensor (Deployed to labeled Nodes- OPTIONAL)
 
 ```bash
 helm repo add crowdstrike https://crowdstrike.github.io/falcon-helm --force-update
@@ -178,7 +183,7 @@ helm upgrade --install falcon-sensor crowdstrike/falcon-sensor -n falcon-system 
 --set node.image.registryConfigJSON="$SENSOR_TOKEN"
 ```
 
-# Helm Install for IAR ###
+## Helm Install for IAR ###
 
 ```bash
 helm upgrade --install iar crowdstrike/falcon-image-analyzer \
@@ -193,7 +198,7 @@ helm upgrade --install iar crowdstrike/falcon-image-analyzer \
   --set image.registryConfigJSON="$IAR_TOKEN"
 ```
 
-# Helm Install for KAC ###
+## Helm Install for KAC ###
 
 ```bash
 helm repo add crowdstrike https://crowdstrike.github.io/falcon-helm --force-update
