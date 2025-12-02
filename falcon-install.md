@@ -41,10 +41,10 @@ chmod 777 falcon-container-sensor-pull.sh
 
 1. CrowdStrike API Client is needed with the following scopes:
 
-Falcon Images Download (read)
-Sensor Download (read)
-Falcon Container CLI (write)
-Falcon Container Image (read/write)
+Falcon Images Download (read)  
+Sensor Download (read)  
+Falcon Container CLI (write)  
+Falcon Container Image (read/write)  
 
 2. Paste the Client ID into the variable FALCON_CLIENT_ID 
 3. Paste the Secret into the variable FALCON_CLIENT_SECRET
