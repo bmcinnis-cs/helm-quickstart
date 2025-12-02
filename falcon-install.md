@@ -16,7 +16,7 @@ export KAC_REPO=""
 export KAC_TAG=""
 ```
 
-# Ensure the following is available on workstation/cloudshell
+## Prerequisites 
 
 curl
 helm
