@@ -175,7 +175,7 @@ helm upgrade --install falcon-sensor crowdstrike/falcon-sensor -n falcon-system 
 --set node.image.registryConfigJSON="$SENSOR_TOKEN"
 ```
 
-## Helm Install for Sensor (Deployed to labeled Nodes- OPTIONAL)
+## Helm Install for Sensor (Deployed to labeled Nodes - OPTIONAL)
 
 ```bash
 helm repo add crowdstrike https://crowdstrike.github.io/falcon-helm --force-update
