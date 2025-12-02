@@ -1,7 +1,6 @@
 # Environment Variables
 
 export CID=""
-
 export FALCON_CLIENT_ID=""
 
 `export FALCON_CLIENT_SECRET=""`
