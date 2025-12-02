@@ -177,3 +177,4 @@ helm upgrade --install falcon-kac crowdstrike/falcon-kac -n falcon-kac --create-
 --set image.repository="$KAC_REPO" \
 --set image.tag="$KAC_TAG" \
 --set image.registryConfigJSON="$KAC_TOKEN"  
+
