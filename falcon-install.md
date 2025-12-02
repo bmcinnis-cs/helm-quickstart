@@ -24,9 +24,11 @@ kubectl
 
 # Download the sensor download script and make it executable
 
+```bash
 curl https://raw.githubusercontent.com/CrowdStrike/falcon-scripts/refs/heads/main/bash/containers/falcon-container-sensor-pull/falcon-container-sensor-pull.sh -o falcon-container-sensor-pull.sh
 
 chmod 777 falcon-container-sensor-pull.sh
+```
 
 # Get CID Value from Sensor Download Page 
 
