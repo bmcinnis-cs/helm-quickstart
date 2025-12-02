@@ -36,7 +36,7 @@ chmod 777 falcon-container-sensor-pull.sh
 ## Get CID Value from Sensor Download Page 
 
 1. Log into Falcon and copy CID value from Sensor Download page. (Host Management and Setup -> Sensor Download)
-2. Paste CID Value into variable CID.
+2. Paste CID value into the env variable CID.
 
 ## Generate API Client for Sensor Install 
 
@@ -50,8 +50,8 @@ Falcon Container CLI (write)
 Falcon Container Image (read/write)  
 ```
 
-2. Paste the Client ID into the variable FALCON_CLIENT_ID 
-3. Paste the Secret into the variable FALCON_CLIENT_SECRET
+2. Paste the Client ID into the env variable FALCON_CLIENT_ID 
+3. Paste the Secret into the env variable FALCON_CLIENT_SECRET
 
 ## Setup Node Affinity Falcon Sensor to specific Nodes (Optional)
 
@@ -88,7 +88,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 --type falcon-sensor \
 --get-pull-token
 ```
-2. Paste the output into the variable SENSOR_TOKEN
+2. Paste the output into the env variable SENSOR_TOKEN
 
 ## Pull Image Path for Sensor
 
@@ -101,8 +101,8 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 --type falcon-sensor \
 --get-image-path
 ```
-2. Paste the image path into the variable SENSOR_REPO (This is everything before the ":")
-3. Paste the image tag into the variable SENSOR_TAG (This is everything after the ":")
+2. Paste the image path into the env variable SENSOR_REPO (This is everything before the ":")
+3. Paste the image tag into the env variable SENSOR_TAG (This is everything after the ":")
 
 ## Fetch Pull Token for IAR 
 
@@ -116,7 +116,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 --get-pull-token
 ```
 
-2. Paste the output into the variable IAR_TOKEN
+2. Paste the output into the env variable IAR_TOKEN
 
 ## Pull Image Path for IAR
 
@@ -130,8 +130,8 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 --get-image-path
 ```
 
-2. Paste the image path into the variable IAR_REPO (This is everything before the ":")
-3. Paste the image tag into the variable IAR_TAG (This is everything after the ":")
+2. Paste the image path into the env variable IAR_REPO (This is everything before the ":")
+3. Paste the image tag into the env variable IAR_TAG (This is everything after the ":")
 
 ## Fetch Pull Token for KAC 
 
@@ -145,7 +145,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 --get-pull-token
 ```
 
-2. Paste the output into the variable KAC_TOKEN
+2. Paste the output into the env variable KAC_TOKEN
 
 ## Pull Image Path for KAC
 
@@ -159,8 +159,8 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 --get-image-path
 ```
 
-2. Paste the image path into the variable KAC_REPO (This is everything before the ":")
-3. Paste the image tag into the variable KAC_TAG (This is everything after the ":")
+2. Paste the image path into the env variable KAC_REPO (This is everything before the ":")
+3. Paste the image tag into the env variable KAC_TAG (This is everything after the ":")
 
 # Step 3 - Use Helm to install Sensor, IAR, KAC
 
