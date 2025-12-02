@@ -212,4 +212,7 @@ helm upgrade --install falcon-kac crowdstrike/falcon-kac -n falcon-kac --create-
 --set image.tag="$KAC_TAG" \
 --set image.registryConfigJSON="$KAC_TOKEN"
 ```
+# Additional Resources
+Official Falcon helm repo - https://github.com/CrowdStrike/falcon-helm/tree/main
+K8s Taints and Tolerations docs - https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/
 
