@@ -18,11 +18,12 @@ export KAC_TAG=""
 
 # Step 1 - Complete Prerequisites 
 
-### Ensure workstation / cloudshell has the following installed
-
+## Ensure workstation / cloudshell has the following installed
+```bash
 curl
 helm
 kubectl
+```
 
 ## Download the sensor download script and make it executable
 
