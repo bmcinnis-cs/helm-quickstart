@@ -40,7 +40,8 @@ chmod 777 falcon-container-sensor-pull.sh
 
 ## Generate API Client for Sensor Install 
 
-1. CrowdStrike API Client is needed with the following scopes:
+1. Log into Falcon and navigate to Support & Resources -> API Clients and Keys
+2. Generate a CrowdStrike API Client with the following scopes:
 
 ```bash
 Falcon Images Download (read)  
