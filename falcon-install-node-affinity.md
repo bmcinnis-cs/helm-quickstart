@@ -124,8 +124,8 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 
 ```bash
 ./falcon-container-sensor-pull.sh \
---client-id <FALCON_CLIENT_ID> \
---client-secret <FALCON_CLIENT_SECRET> \
+--client-id "$FALCON_CLIENT_ID" \
+--client-secret "$FALCON_CLIENT_SECRET" \
 --type falcon-imageanalyzer \
 --get-image-path
 ```
@@ -153,8 +153,8 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 
 ```bash
 ./falcon-container-sensor-pull.sh \
---client-id <FALCON_CLIENT_ID> \
---client-secret <FALCON_CLIENT_SECRET> \
+--client-id "$FALCON_CLIENT_ID" \
+--client-secret "$FALCON_CLIENT_SECRET" \
 --type falcon-imageanalyzer \
 --get-image-path
 ```
