@@ -1,9 +1,13 @@
 # Environment Variables
 
 `export CID=""`
+
 `export FALCON_CLIENT_ID=""`
+
 `export FALCON_CLIENT_SECRET=""`
+
 `export CLUSTER_NAME=""`
+
 `export SENSOR_TOKEN=""`
 `export SENSOR_REPO=""`
 `export SENSOR_TAG=""`
@@ -13,6 +17,9 @@
 `export KAC_TOKEN=""`
 `export KAC_REPO=""`
 `export KAC_TAG=""`
+
+export KAC_TAG=""
+
 
 ## Ensure the following is available on workstation/cloudshell
 
