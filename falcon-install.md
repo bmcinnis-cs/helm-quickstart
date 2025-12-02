@@ -74,7 +74,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 ```
 
 
-# Step 2 - Use Pull Script to Gather Image Paths and Pull Tokens for Sensor, IAR, KAC.
+# Step 2 - Gather Image Paths and Pull Tokens for Sensor, IAR, KAC
 
 ## Fetch Pull Token for Sensor 
 
