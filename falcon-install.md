@@ -1,5 +1,6 @@
 # Environment Variables
 
+```bash
 export CID=""    
 export FALCON_CLIENT_ID=""  
 export FALCON_CLIENT_SECRET=""  
@@ -12,7 +13,8 @@ export IAR_REPO=""
 export IAR_TAG=""  
 export KAC_TOKEN=""  
 export KAC_REPO=""  
-export KAC_TAG="" 
+export KAC_TAG=""
+```
 
 # Ensure the following is available on workstation/cloudshell
 
