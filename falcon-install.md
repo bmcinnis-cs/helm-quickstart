@@ -18,7 +18,7 @@ export KAC_TAG=""
 
 # Step 1 - Complete Prerequisites 
 
-## Ensure workstation / cloudshell has the following installed
+### Ensure workstation / cloudshell has the following installed
 
 curl
 helm
