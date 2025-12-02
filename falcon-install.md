@@ -1,4 +1,4 @@
-### Environment Variables
+# Environment Variables
 
 export CID=""
 export FALCON_CLIENT_ID=""
