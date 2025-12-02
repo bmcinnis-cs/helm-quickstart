@@ -194,7 +194,7 @@ helm upgrade --install iar crowdstrike/falcon-image-analyzer \
   -n falcon-image-analyzer --create-namespace \
   --set deployment.enabled=true \
   --set crowdstrikeConfig.cid="$CID" \
-  --set crowdstrikeConfig.clientID="$FALCON_CLIENT ID" \
+  --set crowdstrikeConfig.clientID="$FALCON_CLIENT_ID" \
   --set crowdstrikeConfig.clientSecret="$FALCON_CLIENT_SECRET" \
   --set image.repository="$IAR_REPO" \
   --set image.tag="$IAR_TAG" \
