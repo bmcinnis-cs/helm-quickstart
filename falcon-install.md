@@ -53,7 +53,9 @@ Falcon Container Image (read/write)
 
 1. Label specific nodes, replace node1 node2 node3 values with node name values
 
-kubectl label nodes node1 node2 node3 falcon-sensor=enabled 
+```bash
+kubectl label nodes node1 node2 node3 falcon-sensor=enabled
+```
 
 2. Create a custom-values.yaml file:
 ```bash
