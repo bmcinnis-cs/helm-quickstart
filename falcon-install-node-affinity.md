@@ -74,6 +74,46 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
             - enabled
 ```
 
+## Setup Tolerations to Deploy Falcon Sensor to specific Nodes with taints (Optional)
+
+1. Check for existing taints on nodes.
+
+```bash
+# Show all node taints
+kubectl get nodes -o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints
+
+```
+
+2. Here is an example taint
+
+key=value:effect
+
+3. Create a custom-values.yaml file
+
+Add the toleration after the existing default tolerations provided, there is an example provided.
+
+```bash
+node:
+  daemonset:    
+    tolerations:
+      # We want to schedule on control plane nodes where they are accessible
+      - key: "node-role.kubernetes.io/master"
+        operator: "Exists"
+        effect: "NoSchedule"
+      # Future taint for K8s >=1.24
+      - key: "node-role.kubernetes.io/control-plane"
+        operator: "Exists"
+        effect: "NoSchedule"
+      - key: "kubernetes.azure.com/scalesetpriority"
+        operator: "Equal"
+        value: "spot"
+        effect: "NoSchedule"
+      # Added toleration as an example  
+      - key: "type"
+        operator: "Equal"
+        value: "blah" 
+        effect: "NoSchedule"
+```
 
 # Step 2 - Gather Image Paths and Pull Tokens for Sensor, IAR, KAC
 
