@@ -53,7 +53,7 @@ Falcon Container Image (read/write)
 2. Paste the Client ID into the env variable FALCON_CLIENT_ID 
 3. Paste the Secret into the env variable FALCON_CLIENT_SECRET
 
-## Setup Node Affinity to Deploy Falcon Sensor to specific Nodes (Optional)
+## Setup Node Affinity to Deploy Falcon Sensor to Specific Nodes (Optional)
 
 1. Label specific nodes, replace node1 node2 node3 values with node name values. These would be the nodes you want the sensor deployed to.
 
@@ -74,7 +74,7 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
             - enabled
 ```
 
-## Setup Tolerations to Deploy Falcon Sensor to specific Nodes with taints (Optional)
+## Setup Tolerations to Deploy Falcon Sensor to Specific Nodes with Taints (Optional)
 
 1. Check for existing taints on nodes.
 
