@@ -79,7 +79,6 @@ kubectl label nodes node1 node2 node3 falcon-sensor=enabled
 1. Check for existing taints on nodes.
 
 ```bash
-# Show all node taints
 kubectl get nodes -o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints
 
 ```
