@@ -86,8 +86,10 @@ kubectl get nodes -o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints
 
 2. Here is an example taint
 
+```bash
 key=value:effect
 
+```
 3. Create a custom-values.yaml file
 
 Add the toleration after the existing default tolerations provided, there is an example provided.
