@@ -50,8 +50,8 @@ Falcon Container CLI (write)
 Falcon Container Image (read/write)  
 ```
 
-2. Paste the Client ID into the env variable FALCON_CLIENT_ID 
-3. Paste the Secret into the env variable FALCON_CLIENT_SECRET
+3. Paste the Client ID into the env variable FALCON_CLIENT_ID 
+4. Paste the Secret into the env variable FALCON_CLIENT_SECRET
 
 ## Setup Node Affinity to Deploy Falcon Sensor to Specific Nodes (Optional)
 
